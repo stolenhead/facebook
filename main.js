@@ -1,4 +1,5 @@
 window.addEventListener("load", cargarPagina); 
+  var contador = 1;
   function cargarPagina(){
     var boton = document.getElementById("boton");
     boton.disabled = true;
@@ -12,6 +13,8 @@ window.addEventListener("load", cargarPagina);
     crear(repla,textoArea);
   }    
   function crear(repla,textoArea){	
+
+  if (existeContenido(textoArea.value)) {
 	  var parrafo = document.createElement("div");
 	  var padre = document.getElementById("seccion");
 	  parrafo.innerHTML = repla ;
@@ -25,9 +28,26 @@ window.addEventListener("load", cargarPagina);
         hor.classList.toggle("divi");
         hor.innerHTML= " "+ horas+":"+ min;
         parrafo.insertBefore(hor,parrafo.childNodes[0]);
+    var divEmoji =document.createElement("div"); 
+        padre.appendChild(divEmoji);
+    var emojia = document.createElement("a");
+         emojia.classList.toggle("btn-floating","btn-small","waves-effect","waves-light","salmon");
+    var emojib = document.createElement("a");
+        emojib.classList.toggle("btn-floating","btn-small","waves-effect","waves-light","salmon");
+    var emojic = document.createElement("a");
+        emojic.classList.toggle("btn-floating","btn-small","waves-effect","waves-light","salmon");
+        padre.appendChild(emojia);
+        padre.appendChild(emojib);
+        padre.appendChild(emojic);
+        emojia.innerHTML="<i>thumb_down</i>";
+    //up.classList.toggle("material-icons","salmon");
 		    textoArea.value= "";
     	  boton.disabled=true; 
+        contador++;
+  }else{
+    alert("Ingresa contenido -.-"); 
   }
+}
   var textBox =document.getElementById("blablabla");
     textBox.addEventListener("keyup", deleted); 
       function deleted(){
@@ -40,5 +60,13 @@ window.addEventListener("load", cargarPagina);
         else{
            botons.disabled= false;
         }
-      }  
+      } 
+  function existeContenido(mensaje) {
+    mensaje = mensaje.trim();
+    if (mensaje.length == 0) {
+      return false;
+    } else {
+      return true;
+    }
+  } 
  

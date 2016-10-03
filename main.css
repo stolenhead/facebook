@@ -1,1 +1,31 @@
-kmlskdf
+.face{
+	background-color: #0d47a1;
+}
+.gris{
+	background-color: gray;
+    padding: 3% 0% 3% 0%;
+    height: 65px;
+}
+.area{
+	background-color: white;
+	height: 50px;
+}
+.buton{
+	float: right;
+	margin-bottom: 5%;
+	margin-top: 4%;
+	background-color: #ee6e73;
+}
+.divis{
+	border: 1px solid gray;
+	margin-top: 5%;
+	box-sizing: content-box;
+	padding-left: 4%;
+}
+.salmon{
+	background-color:#ee6e73;
+	margin-left: 3%; 
+}
+.emoji{
+ margin-top: 3%;
+}
